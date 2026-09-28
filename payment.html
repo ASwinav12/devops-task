@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        /* Custom styling for real-time validation visual cues */
+        input:focus:invalid {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Secure Payment</h2>
+        
+        <form id="paymentForm" onsubmit="handlePayment(event)" class="space-y-5">
+            <!-- Cardholder Name -->
+            <div>
+                <label for="cardName" class="block text-sm font-medium text-gray-700 mb-1">Cardholder Name</label>
+                <input type="text" id="cardName" required autocomplete="cc-name"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                       placeholder="John Doe">
+            </div>
+
+            <!-- Card Number -->
+            <div>
+                <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                <div class="relative">
+                    <input type="text" id="cardNumber" required autocomplete="cc-number" inputmode="numeric" maxlength="19"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                           placeholder="1234 5678 9101 1121">
+                </div>
+            </div>
+
+            <!-- Expiry & CVV Row -->
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label for="cardExpiry" class="block text-sm font-medium text-gray-700 mb-1">Expiration Date</label>
+                    <input type="text" id="cardExpiry" required autocomplete="cc-exp" maxlength="5"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                           placeholder="MM/YY">
+                </div>
+                <div>
+                    <label for="cardCvv" class="block text-sm font-medium text-gray-700 mb-1">CVV / CVC</label>
+                    <input type="password" id="cardCvv" required autocomplete="cc-csc" inputmode="numeric" maxlength="4"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                           placeholder="123">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" 
+                    class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Pay Now
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Real-time Card Number formatting (adds spaces every 4 digits)
+        document.getElementById('cardNumber').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let matches = value.match(/\d{4,16}/g);
+            let match = matches && matches[0] || '';
+            let parts = [];
+
+            for (let i = 0, len = match.length; i < len; i += 4) {
+                parts.push(match.substring(i, i + 4));
+            }
+
+            if (parts.length > 0) {
+                e.target.value = parts.join(' ');
+            } else {
+                e.target.value = value;
+            }
+        });
+
+        // Real-time Expiry Date formatting (adds '/' after month)
+        document.getElementById('cardExpiry').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            if (value.length > 2) {
+                e.target.value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            } else {
+                e.target.value = value;
+            }
+        });
+
+        // Form submission logic
+        function handlePayment(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('cardName').value;
+            const number = document.getElementById('cardNumber').value;
+            const expiry = document.getElementById('cardExpiry').value;
+            
+            // Client-side execution success simulation
+            alert(`Payment processing simulated for ${name}.\n(Note: Always pair frontend designs with production-ready SDKs like Stripe, PayPal, or Paystack for processing backend transactions safely)`);
+        }
+    </script>
+</body>
+</html>
+
