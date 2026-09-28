@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Creative Studio</title>
+    <style>
+        /* Dark Theme & Modern Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0d0e12;
+            color: #f3f4f6;
+            line-height: 1.7;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Minimal Header */
+        .intro-header {
+            padding: 120px 0 60px 0;
+        }
+
+        .tagline {
+            color: #6366f1;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .intro-header h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -1px;
+            max-width: 800px;
+        }
+
+        .intro-header h1 span {
+            color: #94a3b8;
+        }
+
+        /* Split Feature Section */
+        .split-section {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            border-top: 1px solid #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .intro-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .large-text {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+        }
+
+        .stat-box {
+            background: #161822;
+            border: 1px solid #27273a;
+            border-radius: 12px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* The Timeline / Process Section */
+        .timeline-section {
+            padding: 80px 0;
+            border-top: 1px solid #1e293b;
+        }
+
+        .timeline-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .timeline-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .step {
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .step h4 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Call To Action Footer */
+        .action-banner {
+            margin: 80px 0;
+            background: linear-gradient(90deg, #1e1b4b 0%, #0f172a 100%);
+            border-radius: 16px;
+            padding: 60px;
+            text-align: center;
+            border: 1px solid #312e81;
+        }
+
+        .action-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .action-banner p {
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: #6366f1;
+            color: #ffffff;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #4f46e5;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Minimalist Hero Header -->
+        <header class="intro-header">
+            <span class="tagline">Who We Are</span>
+            <h1>We build digital ecosystems that push boundaries and <span>redefine industry standards.</span></h1>
+        </header>
+
+        <!-- Split Text and Stats Matrix -->
+        <main class="split-section">
+            <div class="left-block">
+                <p class="large-text">
+                    We are a collective of designers, engineers, and strategists driven by a shared obsession with craft. We eliminate unnecessary friction to deliver meaningful digital experiences that actually scale.
+                </p>
+                <br>
+                <p style="color: #94a3b8;">
+                    Our approach isn't about following trends. It's about analyzing data, sharpening aesthetics, and engineering solutions tailored for long-term growth. We treat your product architecture like our own.
+                </p>
+            </div>
+            
+            <div class="right-block">
+                <div class="stat-box">
+                    <div class="stat-item">
+                        <h3>140+</h3>
+                        <p>Projects Done</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>12</h3>
+                        <p>Global Awards</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Client Care</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>6bn+</h3>
+                        <p>API Requests</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Our Process Elements -->
+        <section class="timeline-section">
+            <h2>Our Operational Pillars</h2>
+            <div class="timeline-row">
+                <div class="step">
+                    <span class="step-number">01</span>
+                    <h4>Deep Discovery</h4>
+                    <p>We audit infrastructure, pinpoint bottlenecks, and clarify hidden friction points before laying down blueprints.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">02</span>
+                    <h4>Rapid Iteration</h4>
+                    <p>We design openly, test relentlessly, and deploy weekly loops to ensure project momentum never plateaus.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">03</span>
+                    <h4>Seamless Launch</h4>
+                    <p>We ensure performance metrics match standard requirements, followed by strict monitoring frameworks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Banner -->
+        <section class="action-banner">
+            <h2>Let's build something tangible.</h2>
+            <p>Have an architectural problem or an ambitious project concept? Drop us a brief and we will get moving.</p>
+            <a href="contact.html" class="btn-primary">Initiate Project</a>
+        </section>
+    </div>
+
+</body>
+</html>
+
