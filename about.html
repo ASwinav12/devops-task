@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Modern CSS Reset & Core Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Mission & Story Section */
+        .story-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .story-content h2 {
+            font-size: 2.2rem;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        .story-content p {
+            margin-bottom: 15px;
+            color: #555555;
+        }
+
+        .story-image {
+            background-color: #e9ecef;
+            border-radius: 8px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-weight: 600;
+            border: 2px dashed #dee2e6;
+        }
+
+        /* Core Values */
+        .values-section {
+            background-color: #f1f3f5;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .values-section h2 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 40px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .value-card h3 {
+            margin-bottom: 10px;
+            color: #2a5298;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2.2rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .team-subtitle {
+            color: #6c757d;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #dee2e6;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+
+        .team-card p {
+            font-size: 0.95rem;
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        /* Footer / CTA Section */
+        .cta-footer {
+            background-color: #1e3c72;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta-footer p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #1e3c72;
+            padding: 10px 25px;
+            text-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e2e6ea;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>About Our Company</h1>
+            <p>We are a dedicated team committed to delivering innovation, quality, and exceptional value to our clients worldwide.</p>
+        </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <div class="container story-grid">
+            <div class="story-content">
+                <h2>Our Journey</h2>
+                <p>Founded with a vision to simplify complex solutions, we started our journey with just a handful of thinkers and creators. Over the years, we have grown into a diverse collective determined to make a tangible impact.</p>
+                <p>We believe that true progress comes from collaboration, transparency, and a relentless pursuit of improvement. Every product we build and every service we provide reflects this deep commitment.</p>
+            </div>
+            <div class="story-image">
+                [ Business / Office Image Placeholder ]
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>We believe in doing the right thing, always. Honesty and transparency ground every partnership we build.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We embrace curiosity and continuously push boundaries to discover fresh, efficient solutions.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Impact</h3>
+                    <p>Our success is measured by the value we bring to our community, partners, and clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet the Leadership</h2>
+            <p class="team-subtitle">The passionate minds driving our vision forward.</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar-placeholder">CEO</div>
+                    <h3>Jane Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar-placeholder">CTO</div>
+                    <h3>John Smith</h3>
+                    <p>Chief Technology Officer</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar-placeholder">COO</div>
+                    <h3>Alex Reed</h3>
+                    <p>Chief Operating Officer</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar-placeholder">CMO</div>
+                    <h3>Sarah Jenkins</h3>
+                    <p>Head of Marketing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer -->
+    <footer class="cta-footer">
+        <p>Want to know more about what we do?</p>
+        <a href="contact.html" class="cta-button">Get In Touch</a>
+    </footer>
+
+</body>
+</html>
+
